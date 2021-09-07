@@ -1,8 +1,8 @@
-// dada una fecha te devuelve los días que imprime el calendario
+// dada una date te devuelve los días que imprime el calendario
 
 function getFirstDayCalendar(date) {
-    fecha.setDate(1);
-    while (fecha.getDay() != 1) { fecha.setDate(fecha.getDate() - 1); }
+    date.setDate(1);
+    while (date.getDay() != 1) { date.setDate(date.getDate() - 1); }
 }
 
 
@@ -14,8 +14,8 @@ export class DateService{
         getFirstDayCalendar(date);
         
         for (let i = 0; i < 42; i++) {
-            calendar.push(fecha.push(new Date(date)));
-            fecha.setDate(fecha.getDate() + 1); //ahora necesitamos array de objetos Date
+            calendar.push(date.push(new Date(date)));
+            date.setDate(date.getDate() + 1); //ahora necesitamos array de objetos Date
         }
         return calendar;
     }
