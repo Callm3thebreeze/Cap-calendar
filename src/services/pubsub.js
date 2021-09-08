@@ -12,3 +12,4 @@ export class PubSub {
     }
 
 }
+export default new PubSub();
