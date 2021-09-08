@@ -1,5 +1,5 @@
 //importar DateService
-export class formatService {
+export class FormatService {
 
     static getClockFormat(date) {
         var options = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
