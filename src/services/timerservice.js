@@ -15,4 +15,3 @@ class TimerService {
     }
 }
 export default new TimerService(pubSub, timerInterface);
-//commit de prueba
