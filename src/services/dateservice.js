@@ -6,7 +6,6 @@ function getFirstDayCalendar(date) {
 }
 
 
-
 export class DateService{       
 
     static daysOfCalendar(date) {   
@@ -22,10 +21,20 @@ export class DateService{
 
     
 
-    static addMonth(date, diff) {
+    static getNextOrPreviousMonth(date, diff) {
         date.setMonth(date.getMonth() + diff);
         return DateService.getDayOfMonth(date);
+    }
 
+    static isToday(date, newDate) {
+        return (date.getDate() === newDate.getDate()
+            && date.getMonth() === newDate.getMonth()
+            && date.getFullYear() === newDate.getFullYear())
+    }
+
+    static isThisMonth(date, newDate) {
+        return date.getMonth() === newDate.getMonth() &&
+        date.getFullYear() === newDate.getFullYear();
     }
         
     
