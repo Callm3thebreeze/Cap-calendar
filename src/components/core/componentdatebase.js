@@ -63,6 +63,10 @@ export class ComponentDateBase extends HTMLElement {
         throw METHOD_NOT_IMPLEMENTED;
     }
 
+    connectedCallback(){
+        this._subscribe();
+    }
+
 
     disconnectedCallback() {
         this._disposables.forEach(dispose => dispose && dispose());
