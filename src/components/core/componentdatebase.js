@@ -1,4 +1,4 @@
-import { CHANNELS } from "../../services/config.js"
+import { CHANNELS } from "../../config.js"
 const METHOD_NOT_IMPLEMENTED = "Method not implemented"
 
 export class ComponentDateBase extends HTMLElement {
