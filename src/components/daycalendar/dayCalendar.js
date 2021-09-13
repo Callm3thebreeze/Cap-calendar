@@ -1,4 +1,4 @@
-import { DAYSOFWEEK } from "../config.js";
+import { DAYSOFWEEK } from "../../config.js";
 
 class DayCalendar extends HTMLElement {
     constructor() {

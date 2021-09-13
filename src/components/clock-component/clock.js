@@ -1,4 +1,4 @@
-import {formatService} from "../../services/formatService.js"
+import {FormatService} from "../../services/formatservice.js"
 
 
 class Clock extends HTMLElement{
@@ -10,7 +10,7 @@ class Clock extends HTMLElement{
 
 
     formatCurrentHour(){
-        return formatService.getClockFormat(this.Date);
+        return FormatService.getClockFormat(this.Date);
     }
 
     connectedCallback() {
