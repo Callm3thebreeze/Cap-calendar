@@ -1,6 +1,6 @@
-import pubSub from "../services/pubsub"
+import pubSub from "../services/pubsub.js"
 import { INTERVAL, CHANNEL } from "../config.js"
-import { timerInterface } from "../services/timerinterface"
+import { timerInterface } from "../services/timerinterface.js"
 class TimerService {
     constructor(pubSub, timerInterface) {
         this._pubSub = pubSub;
