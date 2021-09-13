@@ -1,5 +1,5 @@
 import { ComponentDateBase } from "../components/core/componentDateBase.js";
-import {formatService} from "../services/formatService.js"
+import {formatService} from "../../services/formatService.js"
 import sheet from './clock.css.js';
 
 class Clock extends ComponentDateBase{
