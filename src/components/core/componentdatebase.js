@@ -1,7 +1,7 @@
 import { CHANNELS } from "../../config.js"
 import  PubSub  from "../../services/pubsub.js"
 const METHOD_NOT_IMPLEMENTED = "Method not implemented"
-import css from './componentDateBase.css.js';
+import css from './componentdatebase.css.js';
 
 export class ComponentDateBase extends HTMLElement {
 
@@ -30,16 +30,20 @@ export class ComponentDateBase extends HTMLElement {
         this._text = document.createTextNode("");
         this._shadow = this.attachShadow({mode: "open"});
         this._shadow.adoptedStyleSheets = [css];
-        if(this._isThereStyle()){
+        if(this._isAnyStyle()){
             this._setStyle();
             this._shadow.appendChild(this._text);
-            this._update();
         }
     }
-    
+       
 
     _update() {
         this._text.data = this._formatDate();
+    }
+
+
+    _isAnyStyle(){
+        return true;
     }
 
 
