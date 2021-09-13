@@ -1,4 +1,3 @@
-//importar DateService
 export class FormatService {
 
     static getClockFormat(date) {
