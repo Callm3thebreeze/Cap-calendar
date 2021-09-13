@@ -1,6 +1,6 @@
-import { DAYSOFWEEK } from "../config.js";
+import { DAYSOFWEEK } from "../../config.js";
 
-class DayCalendar extends HTMLElement {
+class DaysOfWeek extends HTMLElement {
     constructor() {
         super();
         this.date = new Date();
@@ -23,4 +23,4 @@ class DayCalendar extends HTMLElement {
 
 
 }
-window.customElements.define("cap-daycalendar", DayCalendar);
+window.customElements.define("cap-daysofweek", DaysOfWeek);

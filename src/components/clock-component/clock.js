@@ -1,6 +1,4 @@
-import { ComponentDateBase } from "../components/core/componentDateBase.js";
-import {formatService} from "../../services/formatService.js"
-import sheet from './clock.css.js';
+import {FormatService} from "../../services/formatservice.js"
 
 class Clock extends ComponentDateBase{
 
@@ -11,7 +9,7 @@ class Clock extends ComponentDateBase{
 
 
     formatCurrentHour(){
-        return formatService.getClockFormat(this.Date);
+        return FormatService.getClockFormat(this.Date);
     }
 
     connectedCallback() {
