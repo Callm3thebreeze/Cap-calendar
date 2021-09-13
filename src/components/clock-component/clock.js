@@ -16,10 +16,8 @@ class Clock extends ComponentDateBase{
 
     connectedCallback() {
         const shadow = this.attachShadow({ mode: "open" })
-        const div = document.createElement("div");
         const text = document.createTextNode(this.formatCurrentHour());
-        div.appendChild(text);
-        shadow.appendChild(div);
+        shadow.appendChild(text);
         
     }
 }
