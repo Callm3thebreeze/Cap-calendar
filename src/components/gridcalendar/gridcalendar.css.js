@@ -2,7 +2,7 @@ const sheet = new CSSStyleSheet();
 sheet.replace(`:host{
                     border-bottom: 0.05em solid rgb(70,70,70);
                     color: white;
-                    background-color: rgb(70, 70, 70);
+                    background-color: rgb(255, 255, 255);
                     font-family: sans-serif;
                     display: grid;
                     padding: 1rem 1.7rem;
@@ -22,10 +22,10 @@ sheet.replace(`:host{
                     border-color: transparent;
                 }
                 :host > div:hover{
-                    border-color: grey;
+                    border-color: black;
                 }
                 :host .isNotMonth{
-                    color: grey;
+                    color: black;
                 }
                 :host .isToday{
                     background-color:rgb(127, 178, 240);
