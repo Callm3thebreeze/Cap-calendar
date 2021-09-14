@@ -1,4 +1,4 @@
-import { CHANNELS } from "../../config.js"
+import { CHANNEL } from "../../config.js"
 import  PubSub  from "../../services/pubsub.js"
 const METHOD_NOT_IMPLEMENTED = "Method not implemented"
 import css from './componentdatebase.css.js';
@@ -53,7 +53,7 @@ export class ComponentDateBase extends HTMLElement {
     }
 
 
-    _subscribe(channel = CHANNELS.CHANGEDATE) {
+    _subscribe(channel = CHANNEL.CHANGEDATE) {
         const dispose = PubSub.on(channel, (date) => {
             this.date = date;
         });
