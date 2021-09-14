@@ -6,20 +6,20 @@ function getFirstDayCalendar(date) {
 }
 
 
-export class DateService{       
+export class DateService {
 
-    static daysOfCalendar(date) {   
+    static daysOfCalendar(date) {
         let calendar = [];
         getFirstDayCalendar(date);
-        
+
         for (let i = 0; i < 42; i++) {
-            calendar.push(date.push(new Date(date)));
+            calendar.push(new Date(date));
             date.setDate(date.getDate() + 1); //ahora necesitamos array de objetos Date
         }
         return calendar;
     }
 
-    
+
 
     static getNextOrPreviousMonth(date, diff) {
         date.setMonth(date.getMonth() + diff);
@@ -34,9 +34,9 @@ export class DateService{
 
     static isThisMonth(date, newDate) {
         return date.getMonth() === newDate.getMonth() &&
-        date.getFullYear() === newDate.getFullYear();
+            date.getFullYear() === newDate.getFullYear();
     }
-        
-    
+
+
 }
 
