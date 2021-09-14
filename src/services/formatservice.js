@@ -24,4 +24,9 @@ export class FormatService {
             return new Intl.DateTimeFormat('es-ES', options).format(date);
         }
     }
+
+    static getDay(date){
+        var options = {day:'numeric'};
+        return new Intl.DateTimeFormat('es-ES',options).format(date);
+    }
 }
