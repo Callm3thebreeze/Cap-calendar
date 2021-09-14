@@ -20,7 +20,7 @@ class GridCalendar extends HTMLElement {
         this._create();
         const disposableM = PubSub.on(CHANNEL.CHANGEMONTH, (diff) => {
             this.date.setMonth(this.date.getMonth() + diff);
-            this_update();
+            this._update();
         });
         const disposableD = PubSub.on(CHANNEL.CHANGEDATE, (newDate) => {
             if(this.date.getMonth() ==  newDate && this.date.getDay() != newDate.getDay()){

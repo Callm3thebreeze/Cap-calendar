@@ -21,6 +21,7 @@ export class CalendarButton extends HTMLElement {
     static get observedAttributes() {
         return ['action'];
       }
+
     get action() {
         return this._action;
     }
@@ -35,8 +36,8 @@ export class CalendarButton extends HTMLElement {
         this._shadow.appendChild(button);
     }
 
-    _handlerClick(ev) {
-        ev.stopPropagation();
+    _handlerClick(event) {
+        event.stopPropagation();
         PubSub.emit(CHANNEL.CHANGEMONTH, this.action);
     }
 
@@ -62,6 +63,7 @@ export class CalendarButton extends HTMLElement {
     }
     
     static get observedAttributes() { return ['action']; }
+    
     _getStyle(){
         this._shadow.adoptedStyleSheets = [css];
     }
