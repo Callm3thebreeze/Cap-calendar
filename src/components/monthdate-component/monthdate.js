@@ -10,7 +10,7 @@ export class MonthDate extends ComponentDateBase{
     }
 
     _formatDate(){
-        return FormatService.getMonth(this.date);
+        return FormatService.getMonthDate(this.date);
     }
 
     _setStyle(){
