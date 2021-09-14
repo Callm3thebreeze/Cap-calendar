@@ -1,24 +1,20 @@
-import {FormatService} from "../../services/formatservice.js"
+import { FormatService } from "../../services/formatservice.js";
+import { ComponentDateBase } from "../core/componentdatebase.js";
+import sheet from './clock.css.js';
 
-class Clock extends ComponentDateBase{
-
-    constructor(){
-        super();
-        this.date = new Date();
+export class Clock extends ComponentDateBase {
+ 
+    _formatDate(){
+        return FormatService.getClockFormat(this.date);
     }
 
-
-    formatCurrentHour(){
-        return FormatService.getClockFormat(this.Date);
+    _changeDate(value){
+        return true;
     }
 
-    connectedCallback() {
-        const shadow = this.attachShadow({ mode: "open" })
-        const text = document.createTextNode(this.formatCurrentHour());
-        shadow.appendChild(text);
-        
+    _setStyle(){
+        this._shadow.adoptedStyleSheets = [...this._shadow.adoptedStyleSheets, sheet];
     }
+
 }
-
-window.customElements.define("cap-clock", Clock)
-export {Clock}
+window.customElements.define("cap-clock", Clock);
