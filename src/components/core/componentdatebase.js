@@ -32,8 +32,9 @@ export class ComponentDateBase extends HTMLElement {
         this._shadow.adoptedStyleSheets = [css];
         if(this._isAnyStyle()){
             this._setStyle();
-            this._shadow.appendChild(this._text);
         }
+        this._shadow.appendChild(this._text);
+        this._update();
     }
        
 
