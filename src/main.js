@@ -4,4 +4,4 @@ import './components/systemdate-component/systemdate.js';
 import './components/daysofweek/daysofweek.js';
 import './components/monthdate-component/monthdate.js';
 import "./components/buttons-component/button.js";
-
+import './components/subdate-component/subdate.js';
