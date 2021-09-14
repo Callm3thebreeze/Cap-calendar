@@ -1,13 +1,14 @@
-import { CHANNELS } from "../../config.js";
-import  PubSub  from "../../services/pubsub.js"
-import { FormatService } from "../../services/formatservice.js";
 import { DateService } from "../../services/dateservice.js";
+import { FormatService } from "../../services/formatservice.js";
+import { CHANNEL } from "../../config.js";
+import  PubSub  from "../../services/pubsub.js"
 import css from "./gridcalendar.css.js";
 
 class GridCalendar extends HTMLElement {
     constructor(){
         super();
         this.date = new Date();
+        this._shadow = this.attachShadow({mode:"open"});
         this._disposables = [];
     }
 
@@ -17,11 +18,11 @@ class GridCalendar extends HTMLElement {
 
     connectedCallback(){
         this._create();
-        const disposableM = PubSub.on(CHANNELS.CHANGEMONTH, (diff) => {
+        const disposableM = PubSub.on(CHANNEL.CHANGEMONTH, (diff) => {
             this.date.setMonth(this.date.getMonth() + diff);
             this_update();
         });
-        const disposableD = PubSub.on(CHANNELS.CHANGEDATE, (newDate) => {
+        const disposableD = PubSub.on(CHANNEL.CHANGEDATE, (newDate) => {
             if(this.date.getMonth() ==  newDate && this.date.getDay() != newDate.getDay()){
                 this.date = newDate;
                 this._update();
@@ -43,20 +44,20 @@ class GridCalendar extends HTMLElement {
             let div = document.createElement("div");
             let text = document.createTextNode(this._formatDate(e.date));
             div.appendChild(text);
-            div.addEventListener("click", () => PubSub.emit(CHANNELS.CHANGESELECTEDATE, e.date, false));
+            div.addEventListener("click", () => PubSub.emit(CHANNEL.CHANGESELECTEDATE, e.date, false));
             div.addEventListener("click", () => {div.classList.add("selected")}, false);
-            const disposable = PubSub.on(CHANNELS.CHANGESELECTEDATE, (e) => {
+            const disposable = PubSub.on(CHANNEL.CHANGESELECTEDATE, (e) => {
                 div.classList.remove("selected"),
                 e.isSelected = false;
             });
             this._disposables.push(disposable);
-            if(!element.isSelected) {
+            if(!e.isSelected) {
                 div.classList.remove("selected");
             }
-            if(!element.isMonth) {
+            if(!e.isMonth) {
                 div.classList.add("isNotMonth");
             }
-            if(element.isToday) {
+            if(e.isToday) {
                 div.classList.add("isToday");
             }
             this._shadow.appendChild(div);
