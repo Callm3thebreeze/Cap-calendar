@@ -1,4 +1,3 @@
-//importar DateService
 export class FormatService {
 
     static getClockFormat(date) {
@@ -24,5 +23,10 @@ export class FormatService {
             var options = { day: 'numeric', weekday: 'long' };
             return new Intl.DateTimeFormat('es-ES', options).format(date);
         }
+    }
+
+    static getDay(date){
+        var options = {day:'numeric'};
+        return new Intl.DateTimeFormat('es-ES',options).format(date);
     }
 }
