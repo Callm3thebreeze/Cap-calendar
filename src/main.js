@@ -6,3 +6,8 @@ import './components/gridcalendar/gridcalendar.js';
 import './components/monthdate-component/monthdate.js';
 import "./components/buttons-component/button.js";
 import './components/subdate-component/subdate.js';
+
+
+import timerService from './services/timerService.js'
+
+timerService.init()
