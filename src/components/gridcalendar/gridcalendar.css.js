@@ -1,7 +1,7 @@
 const sheet = new CSSStyleSheet();
 sheet.replace(`:host{
-                    border-bottom: 0.05em solid rgb(70,70,70);
-                    color: white;
+                    border-bottom: 0.05em solid #7FB2F0;
+                    color: #fffff;
                     background-color: #fffff;
                     font-family: sans-serif;
                     display: grid;
@@ -23,18 +23,18 @@ sheet.replace(`:host{
                     border-color: transparent;
                 }
                 :host > div:hover{
-                    border-color: black;
+                    border-color: #9A9EA1;
                 }
                 :host .isNotMonth{
-                    color: black;
+                    color: #00000;
                 }
                 :host .isToday{
-                    background-color:rgb(127, 178, 240);
+                    background-color: #7FB2F0;
                     
                 }
                 :host .selected {
                     box-shadow: inset 0 0 0 0.1em white;
-                    border-color: rgb(127, 178, 240);
+                    border-color: #7FB2F0;
                     
                 }`
     );

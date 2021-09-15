@@ -17,7 +17,7 @@ sheet.replace(`
     width: 100%;
 }
 :host > button:hover{
-    color: red;
+    color: #7FB2F0;
 }
 :host > button[action="1"]{
     border-bottom: 0.05em solid;
